@@ -1,1 +1,0 @@
-function e(e){let t=Number(e??0);return`${new Intl.NumberFormat(`fr-FR`,{maximumFractionDigits:0}).format(t)} FCFA`}function t(e,t){return!t||t<=e?null:Math.round((t-e)/t*100)}function n(e){return new Intl.DateTimeFormat(`fr-FR`,{dateStyle:`medium`}).format(new Date(e))}export{n,e as r,t};

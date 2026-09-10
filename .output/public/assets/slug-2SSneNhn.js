@@ -1,1 +1,0 @@
-function e(e){return e.normalize(`NFD`).replace(/[\u0300-\u036f]/g,``).toLowerCase().replace(/[^a-z0-9]+/g,`-`).replace(/^-+|-+$/g,``).slice(0,60)}function t(t){return`${e(t)||`boutique`}-${Math.random().toString(36).slice(2,7)}`}export{t};
