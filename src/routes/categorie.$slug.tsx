@@ -15,16 +15,42 @@ import { categoriesQuery, productsQuery, type ProductFilters } from "@/lib/marke
 
 export const Route = createFileRoute("/categorie/$slug")({
   head: ({ params }) => {
-    const label = params.slug.replace(/-/g, " ");
-    return {
-      meta: [
-        { title: `${label} — BYAWA` },
-        { name: "description", content: `Achetez ${label} sur BYAWA : produits de vendeurs vérifiés, livrés partout au Sénégal.` },
-        { property: "og:title", content: `${label} — BYAWA` },
-        { property: "og:description", content: `Le meilleur de la catégorie ${label} sur BYAWA.` },
-      ],
-    };
-  },
+  const label = params.slug.replace(/-/g, " ");
+
+  return {
+    meta: [
+      {
+        title: `${label} au Sénégal — BYAWA Marketplace`,
+      },
+      {
+        name: "description",
+        content:
+          `Découvrez et achetez des produits ${label} sur BYAWA, la marketplace sénégalaise. Produits de vendeurs vérifiés, livraison partout au Sénégal et paiement à la livraison.`,
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        property: "og:title",
+        content: `${label} au Sénégal — BYAWA Marketplace`,
+      },
+      {
+        property: "og:description",
+        content:
+          `Découvrez les meilleurs produits ${label} sur BYAWA. Achetez auprès de vendeurs vérifiés avec livraison partout au Sénégal.`,
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: `https://byawamarketplace.com/categorie/${params.slug}`,
+      },
+    ],
+  };
+},
   component: CategoryPage,
 });
 
