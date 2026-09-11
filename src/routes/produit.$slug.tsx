@@ -13,15 +13,41 @@ import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/produit/$slug")({
   head: ({ params }) => {
-    const label = params.slug.replace(/-/g, " ");
-    return {
-      meta: [
-        { title: `${label} — BYAWA` },
-        { name: "description", content: `Achetez ${label} sur BYAWA. Vendeur vérifié, livraison suivie, paiement à la livraison.` },
-        { property: "og:title", content: `${label} — BYAWA` },
-        { property: "og:description", content: `Fiche produit ${label} sur la marketplace BYAWA.` },
-      ],
-    };
+  const label = params.slug.replace(/-/g, " ");
+
+  return {
+    meta: [
+      {
+        title: `${label} — BYAWA Marketplace Sénégal`,
+      },
+      {
+        name: "description",
+        content:
+          `Achetez ${label} au Sénégal sur BYAWA. Découvrez ce produit, son vendeur et profitez de la livraison avec paiement à la livraison.`,
+      },
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        property: "og:title",
+        content: `${label} — BYAWA Marketplace Sénégal`,
+      },
+      {
+        property: "og:description",
+        content:
+          `Découvrez ${label} sur BYAWA, la marketplace sénégalaise. Livraison au Sénégal et paiement à la livraison.`,
+      },
+      {
+        property: "og:type",
+        content: "product",
+      },
+      {
+        property: "og:url",
+        content: `https://byawamarketplace.com/produit/${params.slug}`,
+      },
+    ],
+  };
   },
   component: ProductPage,
 });
