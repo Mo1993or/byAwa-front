@@ -23,19 +23,37 @@ import { SmartImage } from "@/components/SmartImage";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "BYAWA — La marketplace africaine de tous les jours" },
-      {
-        name: "description",
-        content:
-          "Achetez mode, électronique, électroménager, maison et alimentation auprès de vendeurs vérifiés. Livraison partout au Sénégal, paiement à la livraison.",
-      },
-      { property: "og:title", content: "BYAWA — La marketplace africaine de tous les jours" },
-      {
-        property: "og:description",
-        content: "Des milliers de produits, des centaines de boutiques vérifiées, livrés chez vous.",
-      },
-    ],
+  meta: [
+    {
+      title: "BYAWA Marketplace — Achetez et vendez au Sénégal",
+    },
+    {
+      name: "description",
+      content:
+        "BYAWA est une marketplace sénégalaise pour acheter et vendre des produits en ligne. Mode, électronique, maison, beauté et plus. Livraison partout au Sénégal.",
+    },
+    {
+      name: "robots",
+      content: "index, follow",
+    },
+    {
+      property: "og:title",
+      content: "BYAWA Marketplace — Achetez et vendez au Sénégal",
+    },
+    {
+      property: "og:description",
+      content:
+        "Achetez et vendez facilement sur BYAWA, la marketplace sénégalaise. Découvrez des produits et boutiques vérifiées avec livraison au Sénégal.",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://byawamarketplace.com/",
+    },
+   ],
   }),
   component: Home,
 });
