@@ -112,13 +112,46 @@ function ProductPage() {
     itemCondition: "https://schema.org/NewCondition",
   },
 };
-
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Accueil",
+      item: "https://byawamarketplace.com/",
+    },
+    ...(product.categories
+      ? [
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: product.categories.name,
+            item: `https://byawamarketplace.com/categorie/${product.categories.slug}`,
+          },
+        ]
+      : []),
+    {
+      "@type": "ListItem",
+      position: product.categories ? 3 : 2,
+      name: product.name,
+      item: `https://byawamarketplace.com/produit/${product.slug}`,
+    },
+  ],
+};
   return (
     <div className="container-byawa py-8">
       <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify(productJsonLd),
+  }}
+/>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(breadcrumbJsonLd),
   }}
 />
       <nav className="mb-5 text-sm text-muted-foreground">
