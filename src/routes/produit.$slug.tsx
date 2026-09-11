@@ -87,9 +87,40 @@ function ProductPage() {
 
   const discount = discountPercent(Number(product.price), Number(product.compare_at_price));
   const images = product.images?.length ? product.images : [];
+  const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.name,
+  description: product.description || `Découvrez ${product.name} sur BYAWA.`,
+  image: images,
+  sku: product.id,
+  brand: product.brand
+    ? {
+        "@type": "Brand",
+        name: product.brand,
+      }
+    : undefined,
+  offers: {
+    "@type": "Offer",
+    url: `https://byawamarketplace.com/produit/${product.slug}`,
+    priceCurrency: "XOF",
+    price: Number(product.price),
+    availability:
+      product.stock > 0
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+    itemCondition: "https://schema.org/NewCondition",
+  },
+};
 
   return (
     <div className="container-byawa py-8">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(productJsonLd),
+  }}
+/>
       <nav className="mb-5 text-sm text-muted-foreground">
         <Link to="/" className="hover:text-primary">Accueil</Link>
         <span className="px-2">/</span>
@@ -297,5 +328,6 @@ function ProductPage() {
         </section>
       ) : null}
     </div>
+    
   );
 }
