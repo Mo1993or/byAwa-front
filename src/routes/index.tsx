@@ -57,7 +57,19 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BYAWA Marketplace",
+  url: "https://byawamarketplace.com/",
+};
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "BYAWA Marketplace",
+  url: "https://byawamarketplace.com/",
+};
 function SectionTitle({
   title,
   subtitle,
@@ -71,6 +83,19 @@ function SectionTitle({
 }) {
   return (
     <div className="mb-5 flex items-end justify-between gap-4">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(organizationJsonLd),
+  }}
+/>
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(websiteJsonLd),
+  }}
+/>
       <div>
         <h2 className="flex items-center gap-2 text-xl font-bold sm:text-2xl">
           {icon}
