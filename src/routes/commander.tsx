@@ -58,7 +58,7 @@ function CheckoutPage() {
   }, [user]);
 
   const vendors = Array.from(new Set(lines.map((l) => l.vendorId)));
-  const deliveryFee = vendors.length * 1500;
+  const deliveryFee = vendors.length;
 
   if (lines.length === 0) {
     return (

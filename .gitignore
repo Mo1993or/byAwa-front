@@ -31,6 +31,3 @@ dist-ssr
 *.sw?
 .env
 .output/
-# Local Netlify folder
-.netlify
-.output/

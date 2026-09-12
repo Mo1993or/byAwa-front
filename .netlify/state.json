@@ -1,0 +1,20 @@
+{
+	"dbConnectionString": "postgres://postgres@localhost:51171/postgres",
+	"geolocation": {
+		"data": {
+			"city": "Dakar",
+			"country": {
+				"code": "SN",
+				"name": "Senegal"
+			},
+			"subdivision": {
+				"code": "DK",
+				"name": "Dakar"
+			},
+			"timezone": "Africa/Dakar",
+			"latitude": 14.6935,
+			"longitude": -17.448
+		},
+		"timestamp": 1789145013770
+	}
+}
