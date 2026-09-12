@@ -671,6 +671,7 @@ function ProductDialog({
       stock: Number(form.get("stock") ?? 0),
       category_id: String(form.get("category_id") ?? "") || null,
       images,
+      
     };
 
     setSaving(true);
