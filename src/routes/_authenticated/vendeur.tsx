@@ -641,6 +641,10 @@ function ProductDialog({
   product?: ProductRow;
   trigger?: React.ReactNode;
 }) {
+   if (vendorStatus != "approved"){
+      toast.error("Votre compte n'est pas encore approuvé par l'adiministrateur. Vous pouvez la contacter sur ce numéro +221 77 298 60 05");
+      return;
+    }
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
   const [images, setImages] = useState<string[]>(product?.images ?? []);
@@ -671,7 +675,7 @@ function ProductDialog({
       stock: Number(form.get("stock") ?? 0),
       category_id: String(form.get("category_id") ?? "") || null,
       images,
-      
+
     };
 
     setSaving(true);
