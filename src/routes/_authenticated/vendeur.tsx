@@ -295,7 +295,7 @@ function VendorDashboard() {
            vendor.status === "verifying" ? "Vérification" : vendor.status}
         </span>
       }
-      actions={<ProductDialog vendorId={vendor.id} />}
+      actions={<ProductDialog vendorId={vendor.id} vendorStatus={vendor.status} />}
     >
       <StatGrid>
         <StatCard icon={Package} label="Produits" value={products.length} />
@@ -421,7 +421,7 @@ function VendorDashboard() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
-              <ProductDialog vendorId={vendor.id} />
+              <ProductDialog vendorId={vendor.id} vendorStatus={vendor.status} />
             </div>
           </div>
           {filteredProducts.length === 0 ? (
@@ -461,12 +461,9 @@ function VendorDashboard() {
                   <ProductDialog
                     vendorId={vendor.id}
                     product={p}
-                    trigger={
-                      <Button variant="outline" size="icon" aria-label="Modifier">
-                        <Pencil className="size-4" />
-                      </Button>
-                    }
-                  />
+                    trigger={<Button variant="outline" size="icon" aria-label="Modifier">
+                      <Pencil className="size-4" />
+                    </Button>} vendorStatus={vendor.status}                  />
                   <Button
                     variant="ghost"
                     size="icon"
@@ -635,10 +632,12 @@ function VendorDashboard() {
 
 function ProductDialog({
   vendorId,
+  vendorStatus,
   product,
   trigger,
 }: {
   vendorId: string;
+  vendorStatus: string;
   product?: ProductRow;
   trigger?: React.ReactNode;
 }) {
@@ -652,12 +651,15 @@ function ProductDialog({
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") ?? "").trim();
+    
     if (!name) {
       toast.error("Le nom du produit est requis");
       return;
     }
-
-
+    if (vendorStatus != "approved"){
+      toast.error("Votre compte n'est pas encore approuvé par l'adiministrateur.");
+      return;
+    }
     const payload = {
       name,
       description: String(form.get("description") ?? "").trim() || null,
