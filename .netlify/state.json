@@ -1,5 +1,5 @@
 {
-	"dbConnectionString": "postgres://postgres@localhost:51171/postgres",
+	"dbConnectionString": "postgres://postgres@localhost:53037/postgres",
 	"geolocation": {
 		"data": {
 			"city": "Dakar",
