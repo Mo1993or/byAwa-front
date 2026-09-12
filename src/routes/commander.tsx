@@ -32,8 +32,8 @@ export const Route = createFileRoute("/commander")({
 
 const PAYMENTS = [
   { id: "cod", label: "Paiement à la livraison" },
-  { id: "wave", label: "Wave" },
-  { id: "orange_money", label: "Orange Money" },
+  // { id: "wave", label: "Wave" },
+  // { id: "orange_money", label: "Orange Money" },
 ];
 
 function CheckoutPage() {
@@ -156,9 +156,9 @@ function CheckoutPage() {
                 <button
                   key={p.id}
                   type="button"
-                  onClick={() => (p.label == "Paiement à la livraison") ? setForm({ ...form, paymentMethod: p.id }):({})}
+                  onClick={() => setForm({ ...form, paymentMethod: p.id })}
                   className={`rounded-xl border p-4 text-sm font-medium transition-colors ${
-                    form.paymentMethod === p.id && p.label == "Paiement à la livraison" ? "border-primary bg-primary/10 text-primary" : "border-border hover:bg-secondary"
+                    form.paymentMethod === p.id ? "border-primary bg-primary/10 text-primary" : "border-border hover:bg-secondary"
                   }`}
                 >
                   {p.label}
