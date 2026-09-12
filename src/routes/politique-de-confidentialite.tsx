@@ -126,7 +126,7 @@ function PrivacyPage() {
           </li>
           <li className="flex items-center gap-2">
             <Phone className="size-4 text-primary" />
-            <span>+221 77 000 00 00</span>
+            <span>+221 77 298 60 05</span>
           </li>
           <li className="flex items-center gap-2">
             <MapPin className="size-4 text-primary" />

@@ -76,7 +76,7 @@ function HelpPage() {
       <div className="surface-card mt-10 p-6">
         <h2 className="text-lg font-bold">Besoin d'aide supplémentaire ?</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Écrivez-nous à contact@byawa.com ou appelez le +221 77 000 00 00, du lundi au dimanche de 8h à 20h.
+          Écrivez-nous à contact@byawa.com ou appelez le +221 77 298 60 05, du lundi au dimanche de 8h à 20h.
         </p>
       </div>
     </div>

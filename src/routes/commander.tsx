@@ -114,7 +114,7 @@ function CheckoutPage() {
                 <Input
                   id="phone"
                   required
-                  placeholder="+221 77 000 00 00"
+                  placeholder="+221 77 298 60 05"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 />

@@ -11,7 +11,7 @@ export const SITE_SETTING_DEFAULTS = {
   home_hero_image: "",
   home_stat_products: "1 000+",
   home_stat_cities: "14",
-  contact_phone: "+221 77 000 00 00",
+  contact_phone: "+221 77 298 60 05",
   contact_whatsapp: "",
   contact_email: "contact@byawa.com",
   contact_address: "Dakar, Sénégal",

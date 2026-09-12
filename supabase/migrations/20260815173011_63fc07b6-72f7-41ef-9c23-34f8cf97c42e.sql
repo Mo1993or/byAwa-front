@@ -12,7 +12,7 @@ ALTER TABLE public.vendors
 
 INSERT INTO public.settings (key, value) VALUES
   ('vendor_membership_fee', '10000'),
-  ('membership_payment_instructions', 'Envoyez les frais d''adhésion par Wave ou Orange Money au 77 000 00 00 (BYAWA), puis indiquez la référence de la transaction.')
+  ('membership_payment_instructions', 'Envoyez les frais d''adhésion par Wave ou Orange Money au 77 298 60 05 (BYAWA), puis indiquez la référence de la transaction.')
 ON CONFLICT (key) DO NOTHING;
 
 -- appliquer les valeurs par défaut aux boutiques existantes
