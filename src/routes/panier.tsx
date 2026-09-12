@@ -24,7 +24,8 @@ function CartPage() {
   const { user } = useAuth();
 
   const vendors = Array.from(new Set(lines.map((l) => l.vendorId)));
-  const deliveryFee = vendors.length;
+  const deliveryFee = 0;
+  // const deliveryFee = vendors.length;
 
   if (lines.length === 0) {
     return (
